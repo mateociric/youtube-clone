@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+:root {
+    --border-color: #C8C8C8;
+    --font: Arial, sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 10px/16px * 100 = 62.5% => 10px */
+}
+
+.wrapper {
+    width: 100vw;
+    min-width: 70rem; /* to prevent overlapping of elements*/
+}
+
+/* ---------------- HEADER -------------------- */
+
+.header {
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+    padding: .5rem 0 .5rem;
+    display: flex;
+    justify-content:space-between;
+}
+
+.header img { /* resize all icons in header menu */
+    width: 2.5rem;
+}
+
+.group-1, .group-2, .group-3 {
+    display: flex;
+    align-items: center;
+}
+
+.group-1 {
+    width: 10%;
+    padding-left: 1.65rem;
+    justify-content: flex-start;
+}
+
+.group-1 .group-1__youtube-logo { /* resize logo and make space between <img> */
+    width: 8rem;
+    margin-left: 1.5rem;
+}
+
+.group-2 {
+    width: 80%;
+    justify-content: center;
+}
+
+
+.group-2__input {
+    width: 30rem;
+    height: 3rem;
+    border: 1px solid var(--border-color);
+    padding-left: 1rem;
+    
+    font-family: var(--font);
+    font-size: 1.4rem;
+}
+
+.group-2__input:focus { /* remove default black outline*/
+    outline: 0px; 
+}
+
+.group-2__button { 
+    width: 5rem;
+    height: 3rem;
+
+    border: 1px solid var(--border-color);
+    
+    background-color: #F8F8F8;
+    background-image: url(./img/icons/search.svg);
+    background-repeat: no-repeat;
+    background-size: 2.5rem;
+    background-position: center;
+}
+
+.group-2__button:hover {
+    background-color: #F0F0F0;
+}
+
+.group-3 {
+    width: 10%;
+    padding-right: 1rem;
+    justify-content: flex-end;
+    position: relative; /* for red circle on notifications icon*/
+}
+
+.group-1__hamburger-icon:hover, .group-3 *:not(:last-child, :nth-child(4)):hover  { /* circle selction on icons exclude: <span> and lasr icon */
+    background-color: #e5e5e5; 
+    outline: #e5e5e5 solid .5rem; 
+    border-radius: 100%;
+}
+.group-3 img:not(:last-child) { /* space between icons*/
+    margin-right: 1.5rem;
+}
+
+.group-3__notifications-number { /* red circle on notifications icon */
+    display: flex; /* to align content (num. 5) of the <span> */
+    justify-content: center;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 100%;
+    position: absolute;
+    top: -.1rem;
+    right: 5rem;
+    background-color: #ff0000;
+    font-family: var(--font);
+    font-size: 1rem;
+    cursor: default;
+}
+
+/* ---------------- MAIN -------------------- */
+
+.main {
+    width: 100%;
+    display: flex;
+}
+
+/* ---------------- NAV -------------------- */
+
+.nav {
+    width: 3.5%;
+    min-width: 5.25rem; /* disable resize navigation*/
+    height: 40rem;
+    margin-top: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nav img { /* resize all icons in nav*/
+    width: 2.5rem;
+}
+
+.nav div {
+    width: 100%;
+    height: 5.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    font-family: var(--font);
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+.nav div:hover {
+    background-color: #f2f2f2;
+    border-radius: .5rem;
+    cursor: default;
+}
+
+/* ---------------- SECTION -------------------- */
+
+.section {
+    width: 96.5%;
+    padding: 3rem;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns grid layout */
+    gap: 3rem;
+
+    background-color:#f9f9f9;
+}
+
+.vcontainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.vconatiner__video {
+    width: 100%;
+}
+
+.vcontainer__info {
+    margin: 1rem 0 0 0;
+
+    display: flex;
+    align-items: flex-start;
+
+    font-family: --font;
+}
+
+.vconatainer__info-icon {
+    width: 3rem;
+}
+
+.vcontainer__info-text {
+    margin-left: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.vcontainer__info-text p:first-child {
+    font-size: 1.35rem;
+    font-weight: 800;
+
+    margin-bottom: .4rem;
+}
+
+.vcontainer__info-text p:nth-child(2), .vcontainer__info-text p:nth-child(3) {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #C8C8C8;
+    line-height: 1.4rem;
+}
