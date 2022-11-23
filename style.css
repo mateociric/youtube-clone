@@ -185,6 +185,24 @@ html {
     width: 100%;
 }
 
+.parent {
+    position: relative;
+}
+
+.vcontainer__video-time {
+    padding: .75rem;
+    background-color: black;
+    text-align: center;
+    letter-spacing: 0.15rem;
+    color: white;
+
+    border-radius: .25rem;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+
+}
+
 .vcontainer__info {
     margin: 1rem 0 0 0;
 
